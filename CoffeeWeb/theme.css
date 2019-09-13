@@ -26,27 +26,20 @@ header {
         justify-content: space-between;
 }
 
-.menuImg {
-        justify-content: left;
-}
 
-.menuBar {
-        justify-content: right;
-}
-
-a {
+.menu a {
         margin: 10px;
         text-decoration: underline;
         color: grey;
 }        
 
-a:hover {
+.menu a:hover {
         color: black;
         background-color: grey;
         border-radius: 6px;
 }
 
-a:active {
+.menu a:active {
         color: pink;
 }
 
@@ -70,46 +63,35 @@ footer {
         margin: auto;
 }
 
-.contentTheme {
+.theme > div {
         background-color: black;
         width: 1200px;
-        opacity: 0.9;
+        opacity: 0.8;
 }
 
 
 .feature {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 1000px;
         height: 100%;
         align-items: center;
         justify-content: center;
         margin: auto;
-}
-
-.features {
-        display: flex;
-        flex-direction: row;
-        width: 1000px;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 50px;
         flex-wrap: wrap;
 }
 
-.feature1,
-.feature2,
-.feature3,
-.feature4,
-.feature5 {
-        flex-direction: column;
-        margin-bottom: 50px;
-        margin-right:7px;
-}
-
-.featureImg {
+.feature img {
         margin-right:20px;
         margin-bottom: 10px;
 }
+
+.feature > div {
+        margin-bottom: 30px;
+}
+
+
 
 .location {
         display: flex;
@@ -122,19 +104,17 @@ footer {
         margin: auto;
 }
 
-.locations {
+.location .content {
         display: flex;
         flex-direction: row;
 }
 
-.location1,
-.location2,
-.location3 {
+.location .content > div {
         width: 300px;
         margin-left: 20px;
         margin-right: 20px;
         background-color: black;
-        opacity: 0.9;
+        opacity: 0.8;
 }
 
 
