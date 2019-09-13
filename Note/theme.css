@@ -1,0 +1,241 @@
+/*Element selector*/
+h1 {
+  font-family: sans-serif;
+}
+
+/*Attribute selector*/
+p[class~="important"] {
+  color: red;
+}
+
+/*Devrived selector*/
+p strong {
+  font-size: 14;
+}
+
+/*ID selector*/
+p.flower1 {
+  /*Background color*/
+  background-color: rgb(186, 202, 202);
+  padding: 20px;
+}
+
+/*Class selector*/
+p#flower2 {
+  background-color: rgb(175, 161, 161);
+}
+
+/*Descendant selector*/
+
+/*Background*/
+body {
+  background-image: url(./images/2.jpg), url(./images/1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/*Text*/
+p.flower5 {
+  text-indent: -2em;
+  padding: 2em;
+  text-align: left;
+  word-spacing: 30px;
+  letter-spacing: 0.5em;
+  text-transform: capitalize;
+  text-decoration: overline line-through;
+  white-space: normal;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/*Font*/
+p.flower6 {
+  font-family: "New York", serif; /*若未安装New York则使用serif; 通用字体Serif,Sans-serif,Monospace,Cursive,Fantasy*/
+  font-style: oblique;
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+/*Link*/
+a:link {
+  color: #4251d8;
+  background-color: #b2ff99;
+}
+a:visited {
+  color: #727972;
+  background-color: #ffff85;
+}
+a:hover {
+  color: #ff00ff;
+  background-color: #ff704d;
+  text-decoration: none;
+}
+a:active {
+  color: #d32d17;
+  background-color: #ff704d;
+  text-decoration: none;
+}
+a:link, a:visited /*所有超链接都有下划线*/ 
+ {
+  text-decoration: underline;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent;
+}
+
+/*List*/
+ul.flower7-1 {
+  list-style-type: square;
+  list-style-image: url(xxx.jpg);
+  list-style-position: inside;
+}
+ul.flower7-2 {
+  list-style: url(example.gif) circle outside;
+}
+
+/*Table*/
+table.flower8 {
+  border: 1px solid blue;
+  border-collapse: collapse;
+  width: 50%;
+}
+table.flower8 > tr > th /*直系表示*/ {
+  height: 40px;
+  background-color: green;
+  color: white;
+}
+table.flower8 td /*非直系表示*/ {
+  height: 20px;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 15px;
+}
+
+/*Box Model*/
+* {
+  /*通过selector对所有元素进行设置; default=0*/
+  margin: 10;
+  padding: 10;
+}
+#box {
+  width: 70px;
+  margin: 10px;
+  padding: 5px;
+}
+
+/*Padding*/
+h1 {
+  padding: 10px 0.25em 2ex 20%;
+}
+
+/*Border*/
+.borderOutset {
+  border-style: outset;
+}
+.borderStyle {
+  border-style: solid dotted dashed double;
+  border-width: thick;
+  border-color: blue rgb(25%, 35%, 45%) #909090 red;
+}
+
+/*Margin*/
+h1 {
+  margin: 10px 0px 15px 5px;
+}
+h2 {
+  margin-top: 10%;
+}
+
+/*Grouping Margin*/
+
+/*Display*/
+/*将Inline elements的display=block，变为Block elements*/
+/*把文本添加到块级元素(eg.div)的开头,文本自动变为paragraph*/
+
+/*Relative Position*/
+#box_relative {
+  position: relative;
+  left: 30px;
+  top: 20px;
+}
+
+/*Absolute Position*/
+#box_relative {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}
+
+/*Floating Position*/
+#box_float {
+  float: left;
+}
+
+/*clear (floating那一章)*/
+
+/*Grid*/
+.grid-container {
+  display: grid;
+  grid-gap: 50px 100px;
+
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.item2 {
+  grid-column: 1 / 5;
+  grid-row: 1 / span 2;
+}
+
+.item3 {
+  grid-area: 2 / 1 / span 2 / span 3;
+}
+
+/**/
+footer {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+div.subtitle {
+  float: left;
+  width: 15%;
+}
+
+div.content {
+  float: right;
+  width: 85%;
+}
+
+body {
+  width: 100%;
+}
+
+h2.derivedSelector h2.idSelector h2.classSelector {
+  white-space: pre;
+}
+
+a.currentpage {
+  background-color: #df8049;
+}
+
+li {
+  list-style-type: square;
+}
+
+a {
+  background-color: PaleTurquoise;
+  padding: 1px;
+  border-radius: 5px;
+}

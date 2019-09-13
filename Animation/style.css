@@ -1,0 +1,143 @@
+/*// BASE STYLES //*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+.grass,
+.sky,
+.road {
+  position: relative;
+}
+
+.sky {
+  height: 40%;
+  background: skyblue;
+}
+
+.grass {
+  height: 30%;
+  background: seagreen;
+}
+
+.road {
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines {
+  height: 0px;
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  position: absolute;
+  top: 45%;
+  width: 100%;
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+.cloud1 {
+  position: relative;
+  width: 200px;
+  top: -40px;
+  opacity: 0.5;
+
+  animation: wind 80s linear infinite;
+}
+
+.cloud2 {
+  position: relative;
+  width: 300px;
+  top: 50px;
+  animation: wind 50s linear infinite;
+}
+
+.circle {
+  position: relative;
+  left: 150px;
+  top: -100px;
+  width: 100px;
+  line-height: 0px;
+  padding: 50px 0;
+  margin: 60px auto;
+  background-color: pink;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+
+  /* 'transitoin' effect everything changing on this element */
+  transition: background 1s, transform 1s ease-out;
+  /* 2 seperate transition control 2 different things */
+}
+
+.circle:hover {
+  background-color: salmon;
+  font-weight: bold;
+  transform: rotate(360deg);
+}
+
+.mario {
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  /*
+    animation-name: drive;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+  */
+  animation: drive 3s both infinite linear, jump 0.3s 1.2s ease infinite;
+}
+
+.luigi {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: backwards; 
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+/*// KEYFRAMES //*/
+
+@keyframes drive {
+  from {
+    transform: translateX(-150px);
+  }
+  to {
+    transform: translateX(1300px);
+  }
+}
+
+@keyframes wind {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: -40px;
+  }
+  50% {
+    top: -100px;
+  }
+  100% {
+    top: -40px;
+  }
+}

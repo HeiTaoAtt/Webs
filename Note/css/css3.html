@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="theme.css" type="text/css" />
+    <link rel="stylesheet" href="css3.css" type="text/css" />
+    <title>test</title>
+  </head>
+  <body>
+    <header class="mainmenu">
+        <a href="/Note/index.html">Home</a>
+        <a href="/Note/html/html.html">Html</a>
+        <a href="/Note/css/css.html" class="currentpage">Css</a>
+        <a href="/Note/js/javascript.html">Javascript</a>
+    </header>
+
+    <h1>CSS3</h1>
+
+    <div class="subtitle">
+      <a href="/Note/css/selector.html">Selector</a> <br />
+      <a href="/Note/css/style.html">Style</a> <br />
+      <a href="/Note/css/boxmodel.html">Box Model</a> <br />
+      <a href="/Note/css/position.html">Position</a> <br />
+      <a href="/Note/css/advence.html">Advence</a> <br />
+      <a href="/Note/css/flexbox.html">Flexbox</a> <br />
+      <a href="/Note/css/grid.html">Grid</a> <br />
+      <a href="/Note/css/css3.html" class="currentpage">CSS3</a> <br />
+    </div>
+
+    <div class="content">
+      <h2>Border</h2>
+      <p>
+        <h3>border-radius</h3>
+        <div class="border-radius">
+          <p>
+            This div has radius border! <br>
+            div {border-radius: 25px; }
+          </p> 
+        </div>
+
+        <h3>box-shadow</h3>
+        <div class="box-shadow">
+          <p>
+            This div box has shadow! <br>
+            div {box-shadow: 10px 10px 5px #888888; }
+          </p>         
+        </div>
+
+        <h3>border-image</h3>
+        <div class="border-image">
+          This div has image border! <br>
+        </div>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>Background</h2>
+      <p>
+        <h3>backgounrd-size</h3>
+        <div class="background-size">
+          This div has background size ..
+        </div>
+        
+        <h3>background-origin</h3>
+        <div class="background-origin">
+          Specifies the location area of the background image: <br>
+          content-box; padding-box; border-box area.
+        </div>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>Text Effects</h2>
+      <p>
+        <h3>text-shadow</h3>
+        <p class="text-shadow">
+          Set text shadow; can specify horizontal & vertical shadows, blurred distances, color: <br> 
+          .textshadow { text-shadow: 5px 5px 5px #FF0000; }
+        </p>
+
+        <h3>word-wrap 自动换行</h3>
+        <p class="word-wrap"> 
+          ** This means splitting words. <br>
+          .word-wrap {word-wrap:break-word;}
+        </p>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>@font-face</h2>
+      <p class="font-face">
+        Via CSS3, When you find or purchase a font you want to use, <br>
+        you can place the font file on a web server and it will be automatically downloaded. <br> <br>
+
+        First define the name of the font (eg. myFirstFont). Then point to the font file. <br>
+        <h3>Bold text</h3>
+        <p>Must add another @font-face with the descriptor for the bold text. </p>       
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>2D Translate</h2>
+      <p>
+        <h3>translate</h3>
+        <p class="translate">
+          Element moves from its current position (px), <br>
+          according to the given <em>left</em> (x coordinate) and <em>top</em> (y coordinate) positional parameters.
+        </p>
+
+        <h3>rotate</h3>
+        <p class="rotate"> 
+            The element rotates a given angle clockwise (deg). <br>
+            Allow negative values, elements will rotate counterclockwise.  
+        </p>
+
+        <h3>scale</h3>
+        <p class="scale"> 
+          Size of elements will increase or decrease depending on <br>
+          the given width (X-axis) and height (Y-axis) parameters. 
+        </p>
+
+        <h3>skew 翻转</h3>
+        <p class="skew">
+          Elements flips the given angle according to <br>
+          the given horizontal (X-axis) and vertical (Y-axis) parameters.
+        </p>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>3D translate</h2>
+      <p>
+        <h3>rotateX</h3>
+        <p class="rotateX"> Elements rotates around its X axis by a given degree. </p>
+
+        <h3>rotateY</h3>
+        <p class="rotateY"> Elements rotates around its Y axis by a given degree. </p>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>Transition</h2>
+      <p>
+        Add effects to an element when it is transformed <br>
+        from one style to another without using Flash animation or JavaScript. <br>
+
+        <h3>transition</h3>
+        <p class="transition">
+          <ul>
+            <li>
+              Specify which CSS property you want to add the effect to. <br>
+              eg. Specifies when the mouse pointer is over the <div> element: <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;.transition:hover { width:300px; }
+            </li>
+            <li>
+              Specify duration of the specified effect. <br>
+              ** If the duration is not specified, there will be no transition effect because the default value is 0.
+            </li>
+          </ul>
+        </p>
+
+        <h3>Multiple changes</h3>
+        <p class="multiple-changes">
+          To add transition effects to multiple styles, add multiple attributes separated by commas. <br>
+        </p>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>Animation</h2>
+      <p>
+        Animations can replace animated images, Flash animations, and JavaScript on many web pages. <br> <br>
+        Some older browsers need specific prefixes (-webkit-). eg. -webkit-animation-name; @-webkit-keyframes;
+        <h3>@keyframes</h3>
+        <p>
+          Gradually change from the current style to the new style at certain times. <br>
+          Must bind the animation to an element. eg. bind ABC to <div> element:
+          <pre>
+          @keyframes ABC {
+            from {background-color: red;}
+            to {background-color: yellow;}
+          }
+          
+          div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: ABC;
+            animation-duration: 4s;
+          }
+          </pre>
+        </p>
+
+        <h3>animation-name</h3>
+        <p>Bind keyframe name to the element.</p>
+
+        <h3>animation-duration</h3>
+        <p>
+          If animation-duration property is not specified, no animation will occur, because the default value is 0s. <br><br>
+          By using percent, you can add as many style changes as you like.
+          <pre>
+            @keyframes BCD {
+              0%   {background-color: red;}
+              25%  {background-color: yellow;}
+              50%  {background-color: blue;}
+              100% {background-color: green;}
+            }
+            
+            div {
+              width: 100px;
+              height: 100px;
+              background-color: red;
+              animation-name: BCD;
+              animation-duration: 4s;
+            }
+          </pre>
+        
+        </p>
+
+        <h3>animation-delay</h3>
+        <p>
+          Specifies a delay for the start of an animation.
+          <pre>
+            div {
+              width: 100px;
+              height: 100px;
+              position: relative;
+              background-color: red;
+              animation-name: example;
+              animation-duration: 4s;
+              animation-delay: 2s;
+            }
+          </pre>
+        </p>
+
+        <h3>animation-iteration-count</h3>
+        <p>
+          Specifies the number of times an animation should run.
+          <pre>
+            div {
+              width: 100px;
+              height: 100px;
+              position: relative;
+              background-color: red;
+              animation-name: example;
+              animation-duration: 4s;
+              animation-iteration-count: infinite;
+            }        
+          </pre>
+        </p>
+
+        <h3>animation-direction</h3>
+        <p>
+          <ul>
+            <li>normal - The animation is played as normal (forwards). This is default.</li>
+            <li>reverse - The animation is played in reverse direction (backwards).</li>
+            <li>alternate - The animation is played forwards first, then backwards.</li>
+            <li>alternate-reverse - The animation is played backwards first, then forwards</li>
+          </ul>
+          <pre>
+            div {
+              width: 100px;
+              height: 100px;
+              position: relative;
+              background-color: red;
+              animation-name: example;
+              animation-duration: 4s;
+              animation-iteration-count: 2;
+              animation-direction: alternate;
+            }
+          </pre>
+        </p>
+
+        <h3>animation-timing-function</h3>
+        <p>
+          Specifies the speed curve of the animation.
+          <ul>
+            <li>linear - Specifies an animation with the same speed from start to end.</li>
+            <li>ease - Specifies an animation with a slow start, then fast, then end slowly (this is default).</li>
+            <li>ease-in - Specifies an animation with a slow start.</li>
+            <li>ease-out - Specifies an animation with a slow end.</li>
+            <li>ease-in-out - Specifies an animation with a slow start and end.</li>
+            <li>cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function.</li>
+          </ul>
+        </p>
+
+        <h3>animation-fill-mode</h3>
+        <p>
+          Specifies a style for the target element when the animation is not playing (before it starts, after it ends, or both). <br>
+          <ul>
+            <li>none - Default value. Animation will not apply any styles to the element before or after it is executing.</li>
+            <li>forwards - The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count).</li>
+            <li>backwards - The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period.</li>
+            <li>both - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions.</li>
+          </ul>
+
+        </p>
+
+        <h3>animation</h3>
+        <p>
+          <pre>
+            div {
+              animation-name: example;
+              animation-duration: 5s;
+              animation-timing-function: linear;
+              animation-delay: 2s;
+              animation-iteration-count: infinite;
+              animation-direction: alternate;
+            }
+          </pre>
+          This is equal to
+          <pre>
+            div {
+              animation: example 5s linear 2s infinite alternate;
+            }
+          </pre>
+        </p>
+
+
+      </p>
+    </div>
+
+    <hr />
+    <footer>Copyright: ...</footer>
+  </body>
+</html>

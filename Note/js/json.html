@@ -1,0 +1,574 @@
+<!DOCTYPE html><html><head>
+      <title>json</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/yangtingting/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.4.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <style>
+    a {
+        background-color: PaleTurquoise;
+        padding: 1px;
+        border-radius: 5px;
+    }
+    em {
+        font-style: normal;
+        color: DeepPink;
+    }
+    i {
+        font-style: normal;
+        color: grey;
+    }
+</style>
+
+<header class="mainmenu">
+  <a href="/Note/index.html">Home</a>
+  <a href="/Note/html/html.html">Html</a>
+  <a href="/Note/css/css.html">Css</a>
+  <a href="/Note/js/javascript.html" class="currentpage">Javascript</a>
+</header>
+
+<div class="subtitle">
+  <a href="/Note/js/basic1.html"  class="currentpage">Basic1</a> <br />
+  <a href="/Note/js/basic2.html">Basic2</a> <br />
+  <a href="/Note/js/dom.html">HTML DOM</a> <br />
+  <a href="/Note/js/bom.html">Browser BOM</a> <br />
+  <a href="/Note/js/json.html">JS JSON</a> <br />
+</div>
+
+<h1 class="mume-header" id="json-javascript-object-notation">JSON (JavaScript Object Notation)</h1>
+
+<p><i>A format for storing and transporting data.</i><br>
+<i>JSON is <u>text</u>, written with JavaScript object notation.</i><br>
+<i>Often used when data is sent from a server to a web page.</i></p>
+<ul>
+<li>JSON is a lightweight data interchange format</li>
+<li>JSON is language independent *</li>
+<li>JSON is &quot;self-describing&quot; and easy to understand</li>
+</ul>
+<h4 class="mume-header" id="intro">Intro</h4>
+
+<ol>
+<li><em>Exchanging data</em>: <i>When exchanging data between <u>a browser and a server</u>, the <u>data can only be text</u>.</i><br>
+//* <u>JSON is text</u>, and we can convert any JavaScript object into JSON, and send JSON to the server. We can also convert any JSON received from the server into JavaScript objects.</li>
+<li><em>Sending data</em>: <i>If you have data stored in a JavaScript object, you can <u>convert</u> the <u>object into JSON</u>, and send it to a server.</i><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">31</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token string">&quot;New York&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>myObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span>location <span class="token operator">=</span> <span class="token string">&quot;demo_json.php?x=&quot;</span> <span class="token operator">+</span> myJSON<span class="token punctuation">;</span>
+</pre></li>
+<li><em>Receiving data</em>: <i>If you receive data in JSON format, you can <u>convert</u> <u>JSON into JavaScript object</u>.</i><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token string">&apos;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:31, &quot;city&quot;:&quot;New York&quot;}&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>myJSON<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myObj<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+</pre></li>
+<li><em>Storing data</em>: <i>When storing data, the data has to be a certain format, and regardless of where you choose to store it, <u>text is always one of the legal formats</u>.</i><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// Storing data:</span>
+myObj <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">31</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token string">&quot;New York&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>myObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">&quot;testJSON&quot;</span><span class="token punctuation">,</span> myJSON<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Retrieving data:</span>
+text <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">&quot;testJSON&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> obj<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+</pre></li>
+</ol>
+<h4 class="mume-header" id="syntax">Syntax</h4>
+
+<ol>
+<li><em>Data</em> is in <em>name/value</em> pairs; is <em>separated by commas</em>:<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token string">&quot;firstName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;lastName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Doe&quot;</span>
+</pre>//* in Javascript:<pre data-role="codeBlock" data-info="js" class="language-javascript">firstName<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span>
+</pre></li>
+<li><em>Curly braces{}</em> hold <em>objects</em>; <em>Square brackets[]</em> hold <em>arrays</em>:<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token string">&quot;employees&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;firstName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;lastName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Doe&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;firstName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Anna&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;lastName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Smith&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</pre></li>
+</ol>
+<h4 class="mume-header" id="json-vs-xml">JSON vs XML</h4>
+
+<p><u>Both</u> JSON and XML can be used to <u>receive data from a web server.</u></p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// Json:</span>
+<span class="token punctuation">{</span><span class="token string">&quot;employees&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token string">&quot;firstName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;lastName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Doe&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token string">&quot;firstName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Anna&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;lastName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Smith&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token string">&quot;firstName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Peter&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;lastName&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Jones&quot;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// XML:</span>
+<span class="token operator">&lt;</span>employees<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>employee<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>firstName<span class="token operator">&gt;</span>John<span class="token operator">&lt;</span><span class="token operator">/</span>firstName<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>lastName<span class="token operator">&gt;</span>Doe<span class="token operator">&lt;</span><span class="token operator">/</span>lastName<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>employee<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>employee<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>firstName<span class="token operator">&gt;</span>Anna<span class="token operator">&lt;</span><span class="token operator">/</span>firstName<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>lastName<span class="token operator">&gt;</span>Smith<span class="token operator">&lt;</span><span class="token operator">/</span>lastName<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>employee<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>employee<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>firstName<span class="token operator">&gt;</span>Peter<span class="token operator">&lt;</span><span class="token operator">/</span>firstName<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>lastName<span class="token operator">&gt;</span>Jones<span class="token operator">&lt;</span><span class="token operator">/</span>lastName<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>employee<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>employees<span class="token operator">&gt;</span>
+</pre><ol>
+<li>JSON is <em>Like</em> XML:
+<ul>
+<li>Both JSON and XML are &quot;self describing&quot; (human readable)</li>
+<li>Both JSON and XML are hierarchical (values within values)</li>
+<li>Both JSON and XML can be parsed and used by lots of programming languages</li>
+<li>Both JSON and XML can be fetched with an XMLHttpRequest</li>
+</ul>
+</li>
+<li>JSON is <em>Unlike</em> XML:
+<ul>
+<li>JSON does <u>NOT</u> use <u>end tag</u></li>
+<li>JSON is <u>shorter</u></li>
+<li>JSON is <u>quicker</u> to read and write</li>
+<li>JSON can use <u>arrays</u></li>
+</ul>
+</li>
+<li>Why JSON is <em>better</em> than XML:
+<ul>
+<li>XML is much more difficult to parse than JSON.</li>
+<li>JSON is parsed into a ready-to-use JavaScript object.</li>
+</ul>
+</li>
+</ol>
+<h4 class="mume-header" id="data-type">Data Type</h4>
+
+<ol>
+<li>Data type <em>MUST</em> be one of the following type:
+<ul>
+<li><u>a string</u>: <i>must be written in double quotes.</i></li>
+<li><u>a number</u>: <i>must be an integer or a floating point.</i></li>
+<li><u>an object (JSON object)</u>: <i>values in JSON can be objects:</i><pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;employee&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span> <span class="token property">&quot;name&quot;</span><span class="token operator">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token property">&quot;age&quot;</span><span class="token operator">:</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token property">&quot;city&quot;</span><span class="token operator">:</span><span class="token string">&quot;New York&quot;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Objects as values in JSON must follow the same rules as JSON objects.</span>
+</pre></li>
+<li><u>an array</u>: <i>Values in JSON can be arrays.</i><pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;employees&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Anna&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Peter&quot;</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</pre></li>
+<li><u>a boolean</u>: <i>Values in JSON can be true/false.</i><pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span> <span class="token property">&quot;sale&quot;</span><span class="token operator">:</span><span class="token boolean">true</span> <span class="token punctuation">}</span>
+</pre></li>
+<li><u>null</u>: <i>Values in JSON can be null.</i><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token punctuation">{</span> <span class="token string">&quot;middlename&quot;</span><span class="token punctuation">:</span><span class="token keyword">null</span> <span class="token punctuation">}</span>
+</pre></li>
+</ul>
+</li>
+<li>Can <em>NOT</em> use data types like Javascript as:
+<ul>
+<li><u>a function</u></li><u>
+<li>a date</li>
+</u><li><u>undefined</u></li>
+</ul>
+</li>
+</ol>
+<h4 class="mume-header" id="parse">Parse</h4>
+
+<p><i><u>Parse JSON data becomes a JavaScript object</u>.</i></p>
+<ol>
+<li><em>Parse JSON</em>:<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> txt <span class="token operator">=</span> <span class="token string">&apos;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;city&quot;:&quot;New York&quot;}&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> obj<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> obj<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+<span class="token comment">// returns John, 30</span>
+</pre></li>
+<li><em>Parse Date</em>: If you need to include a date, write it as a <u>string</u>.<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">&apos;{&quot;name&quot;:&quot;John&quot;, &quot;birth&quot;:&quot;1986-12-14&quot;, &quot;city&quot;:&quot;New York&quot;}&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>birth <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>birth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> obj<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> obj<span class="token punctuation">.</span>birth<span class="token punctuation">;</span>
+<span class="token comment">// returns John, Sat Dec 13 1986 19:00:00 GMT-0500 (&#x5317;&#x7F8E;&#x4E1C;&#x90E8;&#x6807;&#x51C6;&#x65F6;&#x95F4;)</span>
+</pre></li>
+<li><em>Parse Function</em>: If you need to include a date, write it as a <u>string</u>.<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">&apos;{ &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:&quot;function () {return 30;}&quot;, &quot;city&quot;:&quot;New York&quot;}&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">&quot;(&quot;</span> <span class="token operator">+</span> obj<span class="token punctuation">.</span>age <span class="token operator">+</span> <span class="token string">&quot;)&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// You should avoid using functions in JSON, </span>
+<span class="token comment">// the functions will lose their scope, </span>
+<span class="token comment">// and you have to use eval() to convert them back into functions.</span>
+
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> obj<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">&quot;, &quot;</span> <span class="token operator">+</span> obj<span class="token punctuation">.</span><span class="token function">age</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// returns John, 30</span>
+</pre></li>
+</ol>
+<h4 class="mume-header" id="stringify">Stringify()</h4>
+
+<p><i><u>Convert a JavaScript object into a string</u>.</i></p>
+<ol>
+<li><em>stringify</em> a Javascript <em>Object</em>: <i> </i><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token string">&quot;New York&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myJSON<span class="token punctuation">;</span>
+<span class="token comment">//returns {&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30,&quot;city&quot;:&quot;New York&quot;}</span>
+</pre></li>
+<li><em>stringify</em> a Javascript <em>Array</em>: <i> </i><pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Peter&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Sally&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Jane&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myJSON<span class="token punctuation">;</span>
+<span class="token comment">// returns [&quot;John&quot;,&quot;Peter&quot;,&quot;Sally&quot;,&quot;Jane&quot;]</span>
+</pre></li>
+<li><em>stringify</em> a Javascript <em>Date</em>: In JSON, date objects are not allowed. The <u>JSON.stringify()</u> function <u>will convert any dates into strings</u>.<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> today<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> city <span class="token punctuation">:</span> <span class="token string">&quot;New York&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myJSON<span class="token punctuation">;</span>
+<span class="token comment">// returns {&quot;name&quot;:&quot;John&quot;,&quot;today&quot;:&quot;2019-09-08T16:41:44.902Z&quot;,&quot;city&quot;:&quot;New York&quot;}</span>
+</pre></li>
+<li><em>stringify</em> a Jsvascript <em>Function</em>: The <u>JSON.stringify()</u> function <u>will remove any functions from a JavaScript object</u>, both the key and the value.<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token function-variable function">age</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token number">30</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token string">&quot;New York&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myJSON<span class="token punctuation">;</span>
+<span class="token comment">// returns: {&quot;name&quot;:&quot;John&quot;,&quot;city&quot;:&quot;New York&quot;}</span>
+</pre><u>Convert your functions into strings before running the JSON.stringify() function</u> can return function:<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token function-variable function">age</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token number">30</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token string">&quot;New York&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>age <span class="token operator">=</span> obj<span class="token punctuation">.</span>age<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myJSON <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myJSON<span class="token punctuation">;</span>
+<span class="token comment">// returns {&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:&quot;function () {return 30;}&quot;,&quot;city&quot;:&quot;New York&quot;}</span>
+</pre></li>
+</ol>
+<h4 class="mume-header" id="object">Object</h4>
+
+<p><code>{ &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:null }</code></p>
+<ol>
+<li><em>Access</em> Object Values:
+<ul>
+<li><code>obj.name</code></li>
+<li><code>obj[&quot;name&quot;]</code></li>
+</ul>
+</li>
+<li><em>Loop</em> Object:<pre data-role="codeBlock" data-info="js" class="language-javascript">myObj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token string">&quot;car&quot;</span><span class="token punctuation">:</span><span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>x <span class="token keyword">in</span> myObj<span class="token punctuation">)</span> <span class="token punctuation">{</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token comment">// returns name age name</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>x <span class="token keyword">in</span> myobj<span class="token punctuation">)</span> <span class="token punctuation">{</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> obj<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token comment">// returns John 30 null </span>
+</pre></li>
+<li><em>Nested</em> JSON Objects:<pre data-role="codeBlock" data-info="js" class="language-javascript">myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cars&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;car1&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Ford&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;car2&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;BMW&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;car3&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Fiat&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+x <span class="token operator">=</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">.</span>car2<span class="token punctuation">;</span>
+<span class="token comment">// x = BMW  </span>
+
+myObj<span class="token punctuation">.</span>cars<span class="token punctuation">.</span>car2 <span class="token operator">=</span> <span class="token string">&quot;Mercedes&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">//modify the value</span>
+<span class="token keyword">delete</span> myobj<span class="token punctuation">.</span>cars<span class="token punctuation">.</span>car2<span class="token punctuation">;</span>
+<span class="token comment">// delete the object</span>
+</pre></li>
+</ol>
+<h4>Arrays</h4>
+<p><code>myArr = [ &quot;Ford&quot;, &quot;BMW&quot;, &quot;Fiat&quot; ]</code></p>
+<ol>
+<li><em>Access</em>:
+<ul>
+<li><code>x = myArr[0];</code></li>
+</ul>
+</li>
+<li><em>Loop</em>:<pre data-role="codeBlock" data-info="js" class="language-javascript">myArr <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">&quot;Ford&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BMW&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Fiat&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> myArr<span class="token punctuation">)</span> <span class="token punctuation">{</span> x <span class="token operator">+=</span> myArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token comment">// returns Ford BMW Fiat</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> myArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> x <span class="token operator">+=</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</pre></li>
+<li>Arrays can <em>be</em> values of <em>an object property</em>:<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cars&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span> <span class="token string">&quot;Ford&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BMW&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Fiat&quot;</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</pre></li>
+<li><em>Nested</em> Array <em>in JSON Objects</em>:<br>
+<u>To access array in array, use for-in loop for each array:</u><pre data-role="codeBlock" data-info="js" class="language-javascript">myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;age&quot;</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cars&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Ford&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;models&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span> <span class="token string">&quot;Fiesta&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Focus&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mustang&quot;</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;BMW&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;models&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span> <span class="token string">&quot;320&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;X3&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;X5&quot;</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;Fiat&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;models&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span> <span class="token string">&quot;500&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Panda&quot;</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    x <span class="token operator">+=</span> <span class="token string">&quot;&lt;h1&gt;&quot;</span> <span class="token operator">+</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">&quot;&lt;/h1&gt;&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token keyword">in</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>models<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        x <span class="token operator">+=</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>models<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// To access arrays inside arrays, use a for-in loop for each array.</span>
+
+myObj<span class="token punctuation">.</span>cars<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;Mercedes&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// modify array values</span>
+<span class="token keyword">delete</span> myObj<span class="token punctuation">.</span>cars<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// delete array items</span>
+</pre></li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
