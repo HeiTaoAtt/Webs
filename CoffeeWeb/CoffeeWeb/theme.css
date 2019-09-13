@@ -1,0 +1,133 @@
+header,
+body,
+footer {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        color: #BDBDBD;
+        background-color: black;
+        opacity: 0.9;
+        margin: 0px;
+}
+
+header {
+        position: fixed;
+        height: 69px;
+        width: 100%;
+        border-bottom: 1px solid seashell;
+}
+
+.menu {
+        display: flex;
+        height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.menuImg {
+        justify-content: left;
+}
+
+.menuBar {
+        justify-content: right;
+}
+
+a {
+        margin: 10px;
+        text-decoration: underline;
+        color: grey;
+}        
+
+a:hover {
+        color: black;
+        background-color: grey;
+        border-radius: 6px;
+}
+
+a:active {
+        color: pink;
+}
+
+
+
+.theme {   
+        display: flex;     
+        height: 700px;
+        width: 1200px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./images/mission.jpg);
+        margin: auto;
+}
+
+.contentTheme {
+        background-color: black;
+        width: 1200px;
+        opacity: 0.9;
+}
+
+
+
+.features {
+        display: flex;
+        flex-direction: row;
+        width: 1000px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        margin-bottom: 50px;
+}
+
+.featureImg {
+        margin-right:20px;
+        margin-bottom: 10px;
+        margin-top: 30px;
+}
+
+
+
+.location {
+        display: flex;
+        flex-direction: column;
+        width: 1200px;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./images/location.jpg);
+        margin: auto;
+}
+
+.locations {
+        display: flex;
+        flex-direction: row;
+}
+
+.location1,
+.location2,
+.location3 {
+        width: 300px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: black;
+        opacity: 0.9;
+}
+
+
+.ending {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        margin-bottom: 100px;
+}
+
+
+
+footer {
+        height: 69px;
+        text-align: left;
+        text-indent: 20px;
+}
