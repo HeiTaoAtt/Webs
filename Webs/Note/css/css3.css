@@ -1,0 +1,109 @@
+.border-radius {
+  border: 2px solid;
+  border-radius: 25px;
+  -moz-border-radius: 25px; /* Old Firefox */
+}
+
+.box-shadow {
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.border-image {
+  border-image: url(border.png) 30 30 round;
+  -moz-border-image: url(border.png) 30 30 round; /* 老的 Firefox */
+  -webkit-border-image: url(border.png) 30 30 round; /* Safari 和 Chrome */
+  -o-border-image: url(border.png) 30 30 round; /* Opera */
+}
+
+.backgroud-size {
+  background: url(images/1.jpg);
+  -moz-background-size: 63px 100px; /* 老版本的 Firefox */
+  background-size: 63px 100px;
+  background-repeat: no-repeat;
+}
+
+.background-origin {
+  background: url(images/1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-origin: content-box; /* Safari */
+  background-origin: content-box;
+}
+
+.text-shadow {
+  text-shadow: 5px 5px 5px #ff0000;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("Sansation_Light.ttf"), url("Sansation_Light.eot"); /* IE9+ */
+
+  src: url("Sansation_Bold.ttf"), url("Sansation_Bold.eot"); /* IE9+ */
+  font-weight: bold;
+}
+
+.font-face {
+  font-family: myFirstFont;
+}
+
+.rotate {
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg); /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Safari and Chrome */
+  -o-transform: rotate(30deg); /* Opera */
+  -moz-transform: rotate(30deg); /* Firefox */
+}
+
+.translate {
+  transform: translate(50px, 100px);
+  -ms-transform: translate(50px, 100px); /* IE 9 */
+  -webkit-transform: translate(50px, 100px); /* Safari and Chrome */
+  -o-transform: translate(50px, 100px); /* Opera */
+  -moz-transform: translate(50px, 100px); /* Firefox */
+}
+
+.scale {
+  transform: scale(2, 4);
+  -ms-transform: scale(2, 4); /* IE 9 */
+  -webkit-transform: scale(2, 4); /* Safari 和 Chrome */
+  -o-transform: scale(2, 4); /* Opera */
+  -moz-transform: scale(2, 4); /* Firefox */
+}
+
+.skew {
+  transform: skew(30deg, 20deg);
+  -ms-transform: skew(30deg, 20deg); /* IE 9 */
+  -webkit-transform: skew(30deg, 20deg); /* Safari and Chrome */
+  -o-transform: skew(30deg, 20deg); /* Opera */
+  -moz-transform: skew(30deg, 20deg); /* Firefox */
+}
+
+.rotateX {
+  transform: rotateX(120deg);
+  -webkit-transform: rotateX(120deg); /* Safari 和 Chrome */
+  -moz-transform: rotateX(120deg); /* Firefox */
+}
+
+.rotateY {
+  transform: rotateY(130deg);
+  -webkit-transform: rotateY(130deg); /* Safari 和 Chrome */
+  -moz-transform: rotateY(130deg); /* Firefox */
+}
+
+.transition {
+  transition: width 2s;
+  -moz-transition: width 2s; /* Firefox 4 */
+  -webkit-transition: width 2s; /* Safari 和 Chrome */
+  -o-transition: width 2s; /* Opera */
+}
+
+.multiple-changes {
+  transition: width 2s, height 2s, transform 2s;
+  -moz-transition: width 2s, height 2s, -moz-transform 2s;
+  -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+  -o-transition: width 2s, height 2s, -o-transform 2s;
+}

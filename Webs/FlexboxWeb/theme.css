@@ -1,0 +1,110 @@
+h1 {
+  font-family: monospace;
+  color: rgb(114, 113, 113);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  height: 900px;
+  max-width: 1000px;
+  /* width: 1000px; */
+  justify-content: start;
+  flex-wrap: wrap;
+}
+  
+.left-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 500px;
+}
+
+.left-flex1 {
+  display: flex;
+  flex-direction: row;
+  height: 30%;
+  width: 500px;
+}
+
+.block1 {
+  background-color: rgb(241, 142, 142);
+  margin: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  height: 95%;
+  width: 240px;
+}
+
+.block2 {
+  background-color: rgb(186, 130, 241);
+  margin: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  height: 95%;
+  width: 240px;
+}
+
+.block3 {
+  background-color: rgb(245, 171, 114);
+  margin: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  height: 30%;
+  width: 490px;
+}
+
+.block4 {
+  background-color: rgb(245, 134, 167);
+  margin: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  height: 30%;
+  width: 490px;
+}
+
+.right-flex {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 490px;
+}
+
+.block5 {
+  background-color: rgb(78, 191, 243);
+  margin: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  height: 820px;
+  width: 235px;
+}
+
+.block6 {
+  background-color: rgb(77, 228, 102);
+  margin: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  height: 820px;
+  width: 235px;
+}
+
+.title {
+  font-family: fantasy;
+  font-weight: 700;
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.subtitle {
+  font-family: fantasy;
+  font-weight: 550;
+  font-size: 20px;
+  color: aliceblue;
+}
+
+.content {
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 16px;
+  color: aliceblue;
+}

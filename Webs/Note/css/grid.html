@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="theme.css" type="text/css" />
+    <title>test</title>
+  </head>
+  <body>
+      <header class="mainmenu">
+          <a href="/Note/index.html">Home</a>
+          <a href="/Note/html/html.html">Html</a>
+          <a href="/Note/css/css.html" class="currentpage">Css</a>
+          <a href="/Note/js/javascript.html">Javascript</a>
+      </header>
+  
+      <h1>grid</h1>
+  
+      <div class="subtitle">
+        <a href="/Note/css/selector.html">Selector</a> <br />
+        <a href="/Note/css/style.html">Style</a> <br />
+        <a href="/Note/css/boxmodel.html">Box Model</a> <br />
+        <a href="/Note/css/position.html">Position</a> <br />
+        <a href="/Note/css/advence.html">Advence</a> <br />
+        <a href="/Note/css/flexbox.html">Flexbox</a> <br />
+        <a href="/Note/css/grid.html" class="currentpage">Grid</a> <br />
+        <a href="/Note/css/css3.html">CSS3</a> <br />
+    </div>
+
+    <div class="content">
+      <h2>Intro</h2>
+      <p>
+        The CSS Grid Layout Module offers a grid-based layout system, with rows
+        and columns, <br />
+        making it easier to design web pages without having to use floats and
+        positioning.
+      </p>
+
+      <h3>Grid Elements</h3>
+      <p>
+        A grid layout consists of a parent element, with one or more child
+        elements. <br />
+        &lt;div class="grid-container"> <br />
+        &nbsp;&nbsp;&lt;div class="grid-item">1&lt;/div> <br />
+        &nbsp;&nbsp;&lt;div class="grid-item">2&lt;/div> <br />
+        &lt;/div> <br />
+      </p>
+
+      <div class="grid-container">
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">4</div>
+          <div class="grid-item">5</div>
+          <div class="grid-item">6</div>
+          <div class="grid-item">7</div>
+          <div class="grid-item">8</div>
+          <div class="grid-item">9</div>
+        </div>
+
+      <h3>Display Property</h3>
+      <p>
+        Set its display property to grid or inline-grid.
+        <ul>
+          <li>.grid-container { display: grid; }</li>
+          <li>.grid-container { display: inline-grid; }</li>
+        </ul> <br>
+      </p>
+
+      <h3>Grid Gaps</h3>
+      <p>
+        grid-column-gap; grid-row-gap; grid-gap; (Adjust the gap size)<br>
+        &nbsp;&nbsp; .grid-container { display: grid; grid-row-gap: 50px; }
+      </p>
+
+      <h3>Grid Lines</h3>
+      <p>
+        <ul>
+          <li>Column lines: lines between columns.</li>
+          <li>Row lines: lines between rows.</li>
+        </ul>
+        Place a grid item at column line 1, and let it end on column line 3: <br>
+        &nbsp;&nbsp; .item1 { grid-column-start: 1; grid-column-end: 3;}
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>Grid Container</h2>
+
+      <h3>grid-template-columns</h3>
+      <p>
+          grid-template-rows: defines numbers of columns & width of each column. <br> <br>
+          If you want your grid layout to contain 4 columns, specify the width of the 4 columns, or "auto" if all columns should have the same width: <br>
+          &nbsp;&nbsp; .grid-container { display: grid; grid-template-columns: 80px 200px auto; } <br>
+      </p>
+
+      <h3>grid-template-rows</h3>
+      <p>Same as grid-template-columns. </p>
+
+      <h3>justify-content</h3>
+      <p>
+        Align the whole grid inside the container. <br>
+        ** The grid's total width has to be less than the container's width for the justify-content property to have any effect. <br>
+        <ul>
+          <li>space-evenly: give the columns equal amount of space between, and around them.</li>
+          <li>space-around: give the columns equal amount of space around them.  </li>
+          <li>space-between: give the columns equal amount of space between them. </li>
+          <li>center: align the grid in the middle of the container. </li>
+          <li>start: align the grid at the beginning of the container.</li>
+          <li>end: align the grid at the end of the container.</li>
+        </ul>
+      </p>
+
+      <h3>align-content</h3>
+      <p>
+        Vertically align the whole grid inside the container. <br>
+        ** The grid's total height has to be less than the container's height for the align-content property to have any effect. <br>
+        <ul>
+          <li>space-evenly: give the rows equal amount of space between, and around them.</li>
+          <li>space-around: give the rows equal amount of space around them.</li>
+          <li>space-between: give the rows equal amount of space between them.</li>
+          <li>center: align the rows in the middle of the container.</li>
+          <li>start: align the rows at the beginning of the container.</li>
+          <li>end: align the rows at the end of the container.</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>Grid Item</h2>
+      <p>By default, a container has one grid item for each column, in each row.</p>
+
+      <h3>grid-column</h3>
+      <p>
+        Shorthand property for the grid-column-start and the grid-column-end properties. <br>
+        <ul>
+          <li>
+              Start on row-line 1 and end on row-line 4: <br>
+              &nbsp;&nbsp; .item2 { grid-column: 1 / 5; }
+          </li>
+          <li>
+              Start on row 1 and span 2 rows: <br>
+              &nbsp;&nbsp; .item2 { grid-column: 1 / span 2; }
+          </li>
+        </ul>      
+      </p>
+
+      <h3>grid-row</h3>
+      <p>
+        Same as grid-column.
+      </p>
+
+      <h3>grid-area</h3>
+      <p>
+        Shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties. <br>
+        <ul>
+          <li>
+            Make "item8" start on row-line 1 and column-line 2, and end on row-line 5 and column line 6: <br>
+            &nbsp;&nbsp; .item3 { grid-area: 1 / 2 / 5 / 6; } 
+          </li>
+          <li> 
+            Make "item8" start on row-line 2 and column-line 1, and span 2 rows and 3 columns: <br>
+            &nbsp;&nbsp; .item3 { grid-area: 2 / 1 / span 2 / span 3; } 
+          </li>
+        </ul>
+      </p>
+
+      <h3>Naming Grid Items</h3>
+      <p>
+         <ul>
+          <li> 
+            Item1 gets the name: <br>
+            &nbsp;&nbsp; .item1 { grid-area: myArea; } 
+          </li>
+          <li> 
+            Define 2 rows with 5 columns items names: <br>
+            &nbsp;&nbsp; .grid-container { grid-template-areas: 'myArea myArea . . .'  'myArea . . .';}
+          </li>
+        </ul>
+      </p>
+
+      <h3>Order of the Items</h3>
+      <p>
+        The first item does not have to appear as the first item in the grid. <br>
+        .item1 { grid-area: 1 / span 3 / 2 / 4; } <br>
+        .item2 { grid-area: 3 / 3 / 4 / 4; } <br>
+        .item3 { grid-area: 2 / 1 / 3 / 2; } <br>
+        .item4 { grid-area: 2 / 2 / span 2 / 3; } <br> 
+        .item5 { grid-area: 3 / 1 / 4 / 2; } <br>
+        .item6 { grid-area: 2 / 3 / 3 / 4; }
+      </p>
+    </div>
+
+    <hr />
+    <footer>Copyright: ...</footer>
+  </body>
+</html>

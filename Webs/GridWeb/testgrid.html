@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>test</title>
+
+    <style>
+      .grid-auto-fill {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+
+      .item-fill {
+        background-color: rgb(241, 142, 203);
+        padding: 20px;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      .grid-auto-fit {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+
+      .item-fit {
+        background-color: rgb(241, 142, 203);
+        padding: 20px;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      body {
+        padding: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>auto-fill</h2>
+    <div class="grid-auto-fill">
+      <div class="item-fill">item1</div>
+      <div class="item-fill">item2</div>
+      <div class="item-fill">item3</div>
+      <div class="item-fill">item4</div>
+      <div class="item-fill">item5</div>
+      <div class="item-fill">item6</div>
+      <div class="item-fill">item7</div>
+    </div>
+
+    <hr />
+    <h2>auto-fit</h2>
+    <div class="grid-auto-fit">
+      <div class="item-fit">item1</div>
+      <div class="item-fit">item2</div>
+      <div class="item-fit">item3</div>
+      <div class="item-fit">item4</div>
+      <div class="item-fit">item5</div>
+      <div class="item-fit">item6</div>
+      <div class="item-fit">item7</div>
+    </div>
+  </body>
+</html>

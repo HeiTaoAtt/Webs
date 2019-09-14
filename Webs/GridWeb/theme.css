@@ -1,0 +1,137 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* set a column to be 1fr, but shrink no further than 250px */
+  grid-template-rows: 250px 250px 250px 250px;
+  grid-gap: 5px 5px;
+}
+
+.block1 {
+  /* grid-row: 1 / span 1;
+  grid-column: 1 / span 1; */
+  background-color: rgb(241, 142, 142);
+  /* margin: 5px; */
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+}
+
+.block2 {
+  /* grid-row: 1 / span 1;
+  grid-column: 2 / span 1; */
+  background-color: rgb(186, 130, 241);
+  /* margin: 5px; */
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+}
+
+.block3 {
+  /* grid-row: 2 / span 1;
+  grid-column: 1 / span 2; */
+  background-color: rgb(245, 171, 114);
+  /* margin: 5px; */
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+}
+
+.block4 {
+  /* grid-row: 3 / span 1;
+  grid-column: 1 / span 2; */
+  background-color: rgb(243, 125, 170);
+  /* margin: 5px; */
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+}
+
+.block5 {
+  /* grid-row: 1 / span 3;
+  grid-column: 3 / span 1; */
+  background-color: rgb(78, 191, 243);
+  /* margin: 5px; */
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+}
+
+.block6 {
+  /* grid-row: 1 / span 3;
+  grid-column: 4 / span 1; */
+  background-color: rgb(120, 224, 129);
+  /* margin: 5px; */
+  padding: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+}
+
+.title {
+  font-family: fantasy;
+  font-weight: 700;
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.subtitle {
+  font-family: fantasy;
+  font-weight: 550;
+  font-size: 20px;
+  color: aliceblue;
+}
+
+.content {
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 16px;
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 375px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px 250px 250px 250px 250px 250px 250px;
+    grid-gap: 1px 1px;
+  }
+
+  .block1 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .block2 {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+  }
+
+  .block3 {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+  }
+
+  .block4 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+  }
+
+  .block5 {
+    grid-row: 4 / span 2;
+    grid-column: 1 / span 2;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-weight: 350;
+    font-size: 16px;
+  }
+
+  .content {
+    font-weight: 200;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="theme.css" type="text/css" />
+    <title>test</title>
+  </head>
+  <body>
+      <header class="mainmenu">
+          <a href="/Note/index.html">Home</a>
+          <a href="/Note/html/html.html">Html</a>
+          <a href="/Note/css/css.html" class="currentpage">Css</a>
+          <a href="/Note/js/javascript.html">Javascript</a>
+      </header>
+  
+      <h1>Position</h1>
+  
+      <div class="subtitle">
+        <a href="/Note/css/selector.html">Selector</a> <br />
+        <a href="/Note/css/style.html">Style</a> <br />
+        <a href="/Note/css/boxmodel.html">Box Model</a> <br />
+        <a href="/Note/css/position.html" class="currentpage">Position</a> <br />
+        <a href="/Note/css/advence.html">Advence</a> <br />
+        <a href="/Note/css/flexbox.html">Flexbox</a> <br />
+        <a href="/Note/css/grid.html">Grid</a> <br />
+        <a href="/Note/css/css3.html">CSS3</a> <br />
+    </div>
+    </div>
+    <hr />
+
+    <div class="content">
+      <h2>Relative Position</h2>
+      <p>
+        <ol>
+          <li>元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。</li>
+          <li>如果将 top 设置为 20px，那么框将在原位置顶部下面 20 像素的地方。</li>
+        </ol>
+      </p>
+
+      <h2>Absolute Position</h2>
+      <p>
+        <ol>
+          <li>
+            元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。 <br>
+            元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。<br>
+            元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。
+          </li>
+          <li>如果将 top 设置为 20px，那么框将在屏幕左上角下面 20 像素的地方</li>
+        </ol>
+        
+      </p>
+
+      <h2>Floating Position</h2>
+      <p>
+        <ol>
+          <li>
+              浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+              由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。    
+          </li>
+          <li>当把框1向右浮动时，它脱离文档流并且向右移动，直到它的右边缘碰到包含框的右边缘</li>
+          <li>
+            当框 1 向左浮动时，它脱离文档流并且向左移动，直到它的左边缘碰到包含框的左边缘。<br>
+            因为它不再处于文档流中，所以它不占据空间，实际上覆盖住了框 2，使框 2 从视图中消失。
+          </li>
+          <li>如果把所有三个框都向左移动，那么框 1 向左浮动直到碰到包含框，另外两个框向左浮动直到碰到前一个浮动框。</li>
+          <li>
+              如果包含框太窄，无法容纳水平排列的三个浮动元素，那么其它浮动块(从3倒序)向下移动，直到有足够的空间。 <br>
+              如果浮动元素的高度不同，那么当它们向下移动时可能被其它浮动元素“卡住”。
+          </li>
+        </ol>
+      </p>
+
+      <h2>Clear</h2>
+      <p>
+
+      </p>
+
+    </div>
+
+    <hr />
+    <footer>Copyright: ...</footer>
+  </body>
+</html>

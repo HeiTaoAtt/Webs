@@ -1,0 +1,135 @@
+header,
+body,
+footer {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        color: #BDBDBD;
+        background-color: black;
+        opacity: 0.9;
+        margin: 0px;
+}
+
+header {
+        position: fixed;
+        height: 69px;
+        width: 100%;
+        border-bottom: 1px solid seashell;
+}
+
+.menu {
+        display: flex;
+        height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-items: center;
+        justify-content: space-between;
+}
+
+
+.menu a {
+        margin: 10px;
+        text-decoration: underline;
+        color: grey;
+}        
+
+.menu a:hover {
+        color: black;
+        background-color: grey;
+        border-radius: 6px;
+}
+
+.menu a:active {
+        color: pink;
+}
+
+
+
+footer {
+        height: 69px;
+        text-align: left;
+        text-indent: 20px;
+}
+
+
+
+.theme {   
+        display: flex;     
+        height: 700px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./images/mission.jpg);
+        margin: auto;
+        border-radius: 10px;
+}
+
+.theme > div {
+        background-color: black;
+        width: 100%;
+        opacity: 0.8;
+}
+
+
+.feature {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+}
+
+.feature img {
+        margin-right:20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+}
+
+.feature > div {
+        margin-bottom: 30px;
+}
+
+
+
+.location {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./images/location.jpg);
+        margin: auto;
+        flex-wrap: wrap;
+        border-radius: 10px;
+}
+
+.location .content {
+        display: flex;
+        flex-direction: row;
+}
+
+.location .content > div {
+        width: 300px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: black;
+        opacity: 0.8;
+}
+
+
+.ending {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        margin-bottom: 100px;
+}
+
+
+@media only screen and (max-width: 600px) {
+        .location {
+                height: 1000px;
+        }
+
+}
