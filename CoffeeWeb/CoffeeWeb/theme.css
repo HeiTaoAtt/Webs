@@ -26,17 +26,12 @@ header {
         justify-content: space-between;
 }
 
-.menu img {
-        justify-content: left;
-}
 
 .menu a {
-        justify-content: right;
         margin: 10px;
         text-decoration: underline;
         color: grey;
-}
-     
+}        
 
 .menu a:hover {
         color: black;
@@ -50,19 +45,27 @@ header {
 
 
 
+footer {
+        height: 69px;
+        text-align: left;
+        text-indent: 20px;
+}
+
+
+
 .theme {   
         display: flex;     
         height: 700px;
-        width: 1200px;
         align-items: center;
         justify-content: center;
-        background-image: url(/images/mission.jpg);
+        background-image: url(./images/mission.jpg);
         margin: auto;
+        border-radius: 10px;
 }
 
 .theme > div {
         background-color: black;
-        width: 1200px;
+        width: 100%;
         opacity: 0.8;
 }
 
@@ -70,7 +73,6 @@ header {
 .feature {
         display: flex;
         flex-direction: row;
-        width: 1000px;
         height: 100%;
         align-items: center;
         justify-content: center;
@@ -80,10 +82,13 @@ header {
 }
 
 .feature img {
-        margin: auto;
-        margin-right: 20px;
+        margin-right:20px;
         margin-bottom: 10px;
-        margin-top: 30px;
+        border-radius: 10px;
+}
+
+.feature > div {
+        margin-bottom: 30px;
 }
 
 
@@ -91,12 +96,13 @@ header {
 .location {
         display: flex;
         flex-direction: column;
-        width: 1200px;
         height: 500px;
         align-items: center;
         justify-content: center;
-        background-image: url(/images/location.jpg);
+        background-image: url(./images/location.jpg);
         margin: auto;
+        flex-wrap: wrap;
+        border-radius: 10px;
 }
 
 .location .content {
@@ -109,7 +115,7 @@ header {
         margin-left: 20px;
         margin-right: 20px;
         background-color: black;
-        opacity: 0.9;
+        opacity: 0.8;
 }
 
 
@@ -121,22 +127,9 @@ header {
 }
 
 
-
-footer {
-        height: 69px;
-        text-align: left;
-        text-indent: 20px;
-}
-
-
-@media screen and (max-width: 480px) {
-
-        
-
-
-
-
-
-
+@media only screen and (max-width: 600px) {
+        .location {
+                height: 1000px;
+        }
 
 }
