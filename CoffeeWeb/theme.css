@@ -56,17 +56,16 @@ footer {
 .theme {   
         display: flex;     
         height: 700px;
-        width: 1200px;
         align-items: center;
         justify-content: center;
-        background-image: url(/images/mission.jpg);
+        background-image: url(./images/mission.jpg);
         margin: auto;
         border-radius: 10px;
 }
 
 .theme > div {
         background-color: black;
-        width: 1200px;
+        width: 100%;
         opacity: 0.8;
 }
 
@@ -74,7 +73,6 @@ footer {
 .feature {
         display: flex;
         flex-direction: row;
-        width: 1000px;
         height: 100%;
         align-items: center;
         justify-content: center;
@@ -98,11 +96,10 @@ footer {
 .location {
         display: flex;
         flex-direction: column;
-        width: 1200px;
         height: 500px;
         align-items: center;
         justify-content: center;
-        background-image: url(/images/location.jpg);
+        background-image: url(./images/location.jpg);
         margin: auto;
         flex-wrap: wrap;
         border-radius: 10px;
@@ -127,4 +124,12 @@ footer {
         flex-direction: column;
         height: 200px;
         margin-bottom: 100px;
+}
+
+
+@media only screen and (max-width: 600px) {
+        .location {
+                height: 1000px;
+        }
+
 }
